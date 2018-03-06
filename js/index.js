@@ -42,21 +42,20 @@ imgForm.addEventListener("change",function (e) {
     var startX=0;
     var startY=0;
     var cutData;
-    var showCanvas=document.getElementById("showCanvas");
 
     //当鼠标被按下
     theCanvas.addEventListener("mousedown",function (e) {
         flag=true;
-        startX=e.clientX-showCanvas.offsetLeft;
-        startY=e.clientY-showCanvas.offsetTop;
+        startX=e.clientX-theCanvas.offsetLeft;
+        startY=e.clientY-theCanvas.offsetTop;
         // console.log(startX+":"+startY);
     });
     //当鼠标在移动
     theCanvas.addEventListener("mousemove",function (e) {
        if(flag){
 
-           var _showLeft=e.clientX-showCanvas.offsetLeft,
-               _showTop=e.clientY-showCanvas.offsetTop;
+           var _showLeft=e.clientX-theCanvas.offsetLeft,
+               _showTop=e.clientY-theCanvas.offsetTop;
 
            var _width=_showLeft - startX,
                _height=_showTop - startY;
